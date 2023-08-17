@@ -1,3 +1,4 @@
+import 'package:book_spa/screens/luxury.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -31,8 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [              
               GestureDetector(
                 onTap: (){
-                    // ignore: avoid_print
-                    print("cow");
+                    
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                  );
                 },
                  
                 child: const _ImageWithHoverHighlight(

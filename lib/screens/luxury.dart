@@ -15,25 +15,49 @@ class _LuxuryScreenState extends State<LuxuryScreen> {
       appBar: AppBar(
         title: const Text("SPICE UP YOUR LOOKS"),
       ),
-      body: (
-        Row(
-          children: [
-            ElevatedButton(
-             onPressed: () { 
-                         Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
-                  );
-                     },
-              child: const Text("Home Page")
-                            ),
-            const Text("Luxury SPA"),
-            const Text("Glamour SPA"),
-            const Text("Vicious SPA"),
-            const Text("Annes SPA"),
-          ],
-        )
-      ),
-    );
+      body: Column(
+        children: [
+          Row(
+            children: [
+              ElevatedButton(
+               onPressed: () { 
+                           Navigator.push(  
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    );
+                       },
+                child: const Text("Home Page")
+                              ),
+              const Text("Luxury SPA"),
+              const SizedBox(
+                height: 20,
+                width: 20,
+              ),
+              const Text("Glamour SPA"),
+              const SizedBox(
+                height: 20,
+                width: 20,
+              ),
+              const Text("Vicious SPA"),
+               const SizedBox(
+                height: 20,
+                width: 20,
+              ),
+              const Text("AnnexSPA"),
+            ],
+          ),
+          Center(
+            child: Container(             
+             height: 30,
+             width: 70,
+            /* decoration: BoxDecoration(
+             borderRadius: BorderRadius.circular(30),
+             color: Colors.amber,
+             ),  */
+                         ),
+          ),
+        ],
+        ),
+      );
   }
 }

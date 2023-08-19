@@ -27,7 +27,7 @@ class _LuxuryScreenState extends State<LuxuryScreen> {
                     );
                        },
                 child: const Text("Home Page")
-                              ),
+                                              ),
               const Text("Luxury SPA"),
               const SizedBox(
                 height: 20,
@@ -47,13 +47,27 @@ class _LuxuryScreenState extends State<LuxuryScreen> {
             ],
           ),
           Center(
-            child: Container(             
-             height: 30,
-             width: 70,
-            /* decoration: BoxDecoration(
-             borderRadius: BorderRadius.circular(30),
-             color: Colors.amber,
-             ),  */
+            child: DataTable(
+              columns: const [
+                DataColumn(label: Text("SERVICES")),
+                DataColumn(label: Text("PRICES")),
+                DataColumn(label: Text("ACTION")),
+              ], 
+              rows: [
+                 DataRow(cells: [
+                const DataCell(Text("Manicure")),
+                const DataCell(Text("250")),
+                DataCell(
+                  ElevatedButton(
+                    onPressed: (){
+                      // ignore: avoid_print
+                      print("booked");
+                    }, 
+                    child: const Text("Book Session"))
+                  ),
+              ],
+              )
+              ] 
                          ),
           ),
         ],

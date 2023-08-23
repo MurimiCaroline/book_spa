@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 30,
-                ),)
+                                  ),)
                 ),
             Row(
               children: [
@@ -33,7 +33,22 @@ class _HomeScreenState extends State<HomeScreen> {
                   onPressed: () {
                     // Empty function for onPressed
                   },
-                  child: const Text('Log In'),
+                  child: const Text('Log In',
+                  style: TextStyle(
+                    
+                  ),
+                  ),
+                ),
+                
+                ElevatedButton(
+                  onPressed: () {
+                    // Empty function for onPressed
+                  },
+                  child: const Text('Sign Up',
+                  style: TextStyle(
+                    fontSize: 20,
+                  ),
+                  ),
                 ),
               ],
             ),
@@ -52,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                      
                     child: const _ImageWithHoverHighlight(
                      imagePath: 'images/luxuryspa.jpg',
-                      height: 300,
+                      height: 250,
                       width: 550,
                     ),
                   ),
@@ -66,14 +81,55 @@ class _HomeScreenState extends State<HomeScreen> {
                      
                     child: const _ImageWithHoverHighlight(
                      imagePath: 'images/glamourspa.jpg',
-                      height:300,
+                      height:250,
                      width: 550,
                                     ),
                                ),
                  ),
                 ],
-        )
-              ],      
+        ),
+        const SizedBox(
+          height: 50,
+        ),
+         Row(
+          children: [
+             Expanded(
+                  child: GestureDetector(
+                    onTap: (){
+                        
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                      );
+                    },
+                     
+                    child: const _ImageWithHoverHighlight(
+                     imagePath: 'images/viciousspa.jpg',
+                      height: 250,
+                      width: 550,
+                    ),
+                  ),
+                ),
+                 Expanded(
+                  child: GestureDetector(
+                    onTap: (){
+                        
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                      );
+                    },
+                     
+                    child: const _ImageWithHoverHighlight(
+                     imagePath: 'images/annexspa.jpg',
+                      height: 250,
+                      width: 550,
+                    ),
+                  ),
+                ),
+          ],
+        ),          
+              ],
               ),
       ),
     

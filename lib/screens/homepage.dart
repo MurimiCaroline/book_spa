@@ -1,3 +1,4 @@
+import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
 import 'package:flutter/material.dart';
 
@@ -34,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                 children: [
                                   ElevatedButton(
                     onPressed: () {
-                      // Empty function for onPressed
+                       Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LogIn()),
+                      );
                     },
                     child: const Text('Log In',
                     style: TextStyle(
@@ -45,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   
                                   ElevatedButton(
                     onPressed: () {
-                      // Empty function for onPressed
+                     
                     },
                     child: const Text('Sign Up',
                     style: TextStyle(
@@ -202,7 +206,8 @@ class __ImageWithHoverHighlightState extends State<_ImageWithHoverHighlight> {
             Container(
               width: widget.width,
               height: widget.height,
-              color: Colors.grey.withOpacity(0.3),
+              color: const Color.fromRGBO(248, 8, 68, 0.4).withOpacity(0.3),
+              
             ),
         ],
       ),

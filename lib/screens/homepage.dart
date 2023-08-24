@@ -13,124 +13,146 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       
-      body: Container(
-        decoration: const BoxDecoration(
-          color: Colors.lightBlue,
-        ),
-        child: Column(          
-          children: [
-            const Center(
-              child: Text(
-                "SPICE UP YOUR LOOK",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 30,
-                                  ),)
-                ),
-            Row(
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    // Empty function for onPressed
-                  },
-                  child: const Text('Log In',
-                  style: TextStyle(
-                    
-                  ),
-                  ),
-                ),
-                
-                ElevatedButton(
-                  onPressed: () {
-                    // Empty function for onPressed
-                  },
-                  child: const Text('Sign Up',
-                  style: TextStyle(
-                    fontSize: 20,
-                  ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 10),
-             Row(
-              children: [              
-                Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                        
-                        Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LuxuryScreen()),
-                      );
-                    },
-                     
-                    child: const _ImageWithHoverHighlight(
-                     imagePath: 'images/luxuryspa.jpg',
-                      height: 250,
-                      width: 550,
+      body: ListView(
+        scrollDirection: Axis.vertical,
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.lightBlue,
                     ),
-                  ),
-                ),
-                 Expanded(
-                   child: GestureDetector(
-                    onTap: (){
-                        // ignore: avoid_print
-                        print("cat");
+                    child: Column(          
+                            children: [
+                              const Center(
+                                child: Text(
+                                  "SPICE UP YOUR LOOK",
+                                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 30,
+                                    ),)
+                                  ),
+                              Row(
+                                children: [
+                                  ElevatedButton(
+                    onPressed: () {
+                      // Empty function for onPressed
                     },
-                     
-                    child: const _ImageWithHoverHighlight(
-                     imagePath: 'images/glamourspa.jpg',
-                      height:250,
-                     width: 550,
-                                    ),
-                               ),
-                 ),
-                ],
-        ),
-        const SizedBox(
-          height: 50,
-        ),
-         Row(
-          children: [
-             Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                        
-                        Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LuxuryScreen()),
-                      );
-                    },
-                     
-                    child: const _ImageWithHoverHighlight(
-                     imagePath: 'images/viciousspa.jpg',
-                      height: 250,
-                      width: 550,
+                    child: const Text('Log In',
+                    style: TextStyle(
+                      
                     ),
-                  ),
-                ),
-                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
-                        
-                        Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const LuxuryScreen()),
-                      );
-                    },
-                     
-                    child: const _ImageWithHoverHighlight(
-                     imagePath: 'images/annexspa.jpg',
-                      height: 250,
-                      width: 550,
                     ),
-                  ),
-                ),
-          ],
-        ),          
-              ],
-              ),
+                                  ),
+                                  
+                                  ElevatedButton(
+                    onPressed: () {
+                      // Empty function for onPressed
+                    },
+                    child: const Text('Sign Up',
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
+                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                               Row(
+                                children: [              
+                                  Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                          
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                        );
+                      },
+                       
+                      child: const _ImageWithHoverHighlight(
+                       imagePath: 'images/luxuryspa.jpg',
+                        height: 250,
+                        width: 550,
+                      ),
+                    ),
+                                  ),
+                                   Expanded(
+                     child: GestureDetector(
+                      onTap: (){
+                          // ignore: avoid_print
+                          print("cat");
+                      },
+                       
+                      child: const _ImageWithHoverHighlight(
+                       imagePath: 'images/glamourspa.jpg',
+                        height:250,
+                       width: 550,
+                                      ),
+                                 ),
+                                   ),
+                                  ],
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                           Row(
+                            children: [
+                               Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                          
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                        );
+                      },
+                       
+                      child: const _ImageWithHoverHighlight(
+                       imagePath: 'images/viciousspa.jpg',
+                        height: 250,
+                        width: 550,
+                      ),
+                    ),
+                                  ),
+                                   Expanded(
+                    child: GestureDetector(
+                      onTap: (){
+                          
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const LuxuryScreen()),
+                        );
+                      },
+                       
+                      child: const _ImageWithHoverHighlight(
+                       imagePath: 'images/annexspa.jpg',
+                        height: 250,
+                        width: 550,
+                      ),
+                    ),
+                                  ),
+                            ],
+                          ), 
+                            const Text(
+                              "About Us",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                                color: Colors.black,
+                              ),
+                            ), 
+                            const SizedBox(
+                              height: 20,
+                            ), 
+                            const Text(
+                              "spice up your look is a foundation founded in 2019 to "
+                              
+                              ),
+                              const Text(
+                                "make easy getting and booking cosmetic services at the comfort of your home"),
+                                ],
+                                ),
+                  )
+      ]
       ),
     
       );

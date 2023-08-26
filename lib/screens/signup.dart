@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 
-class LogIn extends StatefulWidget {
-  const LogIn({super.key});
+class SignUpPage extends StatefulWidget {
+  const SignUpPage({super.key});
 
   @override
-  State<LogIn> createState() => _LogInState();
+  State<SignUpPage> createState() => _SignUpPageState();
 }
 
-class _LogInState extends State<LogIn> {
+class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
-    double containerWidth = MediaQuery.of(context).size.width * 0.4;
-    double containerHeight = MediaQuery.of(context).size.height * 0.4;
-
+     double containerWidth = MediaQuery.of(context).size.width * 0.4;
+    double containerHeight = MediaQuery.of(context).size.height * 0.8;
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -25,7 +24,7 @@ class _LogInState extends State<LogIn> {
             child: Container(
               height: containerHeight,
               width: containerWidth,
-              // margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.all(20),
               // padding: const EdgeInsets.all(20),
               color: Colors.white,
               child: Column(
@@ -33,11 +32,17 @@ class _LogInState extends State<LogIn> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                    const Text(
-                    'LOG IN', // Title
+                    'SIGN UP', // Title
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(labelText: ' Name'),
+                  ),
+                  const TextField(
+                    decoration: InputDecoration(labelText: 'Phone Number'),
                   ),
                   const SizedBox(height: 20),
                   const TextField(

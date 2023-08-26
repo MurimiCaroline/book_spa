@@ -1,6 +1,10 @@
-import 'package:book_spa/screens/login.dart';
+import 'dart:io';
+
+// import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
+import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/material.dart';
+// import 'package:url_launcher/url_launcher.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -33,23 +37,29 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                               Row(
                                 children: [
-                                  ElevatedButton(
-                    onPressed: () {
-                       Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const LogIn()),
-                      );
-                    },
-                    child: const Text('Log In',
-                    style: TextStyle(
-                      
-                    ),
-                    ),
-                                  ),
+                                 /* Link(
+                                    uri: Uri.parse('/https://pub.dev/packages/url_launcher'),
+                                    builder: (context, followLink) => GestureDetector(
+                                      onTap: followLink,
+                                      child: Text(
+                                        "OpenLink",
+                                        style: TextStyle(
+                                          color: Colors.blue,
+                                        
+                                        ),
+                                        ),
+                                    )
+                                  ), */
                                   
                                   ElevatedButton(
                     onPressed: () {
-                     
+                      
+                          
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => const SignUpPage()),
+                        );
+                                         
                     },
                     child: const Text('Sign Up',
                     style: TextStyle(

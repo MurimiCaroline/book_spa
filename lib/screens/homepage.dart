@@ -1,10 +1,9 @@
-import 'dart:io';
-
 // import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
 import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/material.dart';
-// import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/link.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -37,19 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                               Row(
                                 children: [
-                                 /* Link(
-                                    uri: Uri.parse('/https://pub.dev/packages/url_launcher'),
-                                    builder: (context, followLink) => GestureDetector(
-                                      onTap: followLink,
-                                      child: Text(
-                                        "OpenLink",
-                                        style: TextStyle(
-                                          color: Colors.blue,
-                                        
-                                        ),
-                                        ),
-                                    )
-                                  ), */
+                                
                                   
                                   ElevatedButton(
                     onPressed: () {
@@ -67,6 +54,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     ),
                                   ),
+                                  
+                        Link(
+                          target: LinkTarget.self,
+                          uri: Uri.parse('https://www.youtube.com/watch?v=ujlqRTJg48g&ab_channel=Codepur'),
+                         builder: (context,followLink) {
+                          return ElevatedButton(
+                            onPressed: followLink,
+                          child: const Text('Git')
+                          );
+                         }
+                        /* {
+                          return GestureDetector(
+                            child: const Text("Log In"));
+                         }*/
+                         )
                                 ],
                               ),
                               const SizedBox(height: 10),

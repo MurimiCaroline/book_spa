@@ -63,14 +63,14 @@ class _HomeScreenState extends State<HomeScreen> {
                             target: LinkTarget.self,
                            uri: Uri.parse("https://www.youtube.com/watch?v=ujlqRTJg48g&ab_channel=Codepur"),
                          builder: (context,followLink) {
-                          return ElevatedButton(
-                            onPressed: followLink,
+                          return GestureDetector(
+                            onTap: followLink,
                             child: const Text('Git',
                            style: TextStyle(
-                              color: Colors.black,
-                            ),),
-                          
-                          );
+                            color: Colors.black,
+                          ),
+                          )
+                          ); 
                          }
                                
                            

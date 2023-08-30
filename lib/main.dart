@@ -1,4 +1,5 @@
- import 'package:book_spa/screens/homepage.dart';
+//  import 'package:book_spa/screens/homepage.dart';
+import 'package:book_spa/screens/signup.dart';
 // import 'package:book_spa/screens/login.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +15,9 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'SPA BOOK',
-      home: HomeScreen(),   
+      //home: HomeScreen(),   
       // home: LogIn(),
-      // home: SignUpPage (),
+       home: SignUpPage (),
     );
   }
 }

@@ -24,12 +24,13 @@ class _SignUpPageState extends State<SignUpPage> {
             child: Container(
               height: containerHeight,
               width: containerWidth,
-              margin: const EdgeInsets.all(20),
-              // padding: const EdgeInsets.all(20),
+              margin: const EdgeInsets.only(left: 20, right: 20),
+              padding: const EdgeInsets.all(20),
               color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
+               
                 children: [
                    const Text(
                     'SIGN UP', // Title
@@ -53,17 +54,25 @@ class _SignUpPageState extends State<SignUpPage> {
                     decoration: InputDecoration(labelText: 'Password'),
                   ),
                   const SizedBox(height: 20),
-                  ElevatedButton(
-                    onPressed: () {
-                      // Handle form submission
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.orange,
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    child: const Text('Log In'),
+                    child: 
+                    ElevatedButton(
+                          onPressed: () {
+                            // Handle form submission
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.orange,
+                            
+                          ),
+                          child: const Text('Sign Up',),
+                          
+                        ),
                     
-                  ),
-                ],
+                                      ),
+        ],
               ),
             ),
           ),

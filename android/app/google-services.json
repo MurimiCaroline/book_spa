@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258468276697",
+    "project_id": "book-spa",
+    "storage_bucket": "book-spa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258468276697:android:e6edf973cc7665613c91c8",
+        "android_client_info": {
+          "package_name": "com.example.book_spa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258468276697-ve5j7n63e9nu2ec59pgr0or9m07d7d48.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDML-GFHaUTfBSIrusELi-Jp9THL8Nj7MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258468276697-ve5j7n63e9nu2ec59pgr0or9m07d7d48.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

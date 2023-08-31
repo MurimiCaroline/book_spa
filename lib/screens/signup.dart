@@ -1,4 +1,7 @@
+import 'package:book_spa/screens/login.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -30,8 +33,7 @@ class _SignUpPageState extends State<SignUpPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
-               
-                children: [
+                      children: [
                    const Text(
                     'SIGN UP', // Title
                     style: TextStyle(
@@ -40,7 +42,10 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   const TextField(
-                    decoration: InputDecoration(labelText: ' Name'),
+                    decoration: InputDecoration(
+                      // hintText: 'Name',
+                      labelText: ' Name',
+                      ),
                   ),
                   const TextField(
                     decoration: InputDecoration(labelText: 'Phone Number'),
@@ -69,9 +74,20 @@ class _SignUpPageState extends State<SignUpPage> {
                           ),
                           child: const Text('Sign Up',),
                           
-                        ),
-                    
+                        ),                                          
                                       ),
+                    SizedBox(height: containerHeight*0.08,),
+                    RichText(text: 
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap=() =>Get.to(const LogIn()), 
+                      text: "Have an account?",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                    ),
+
         ],
               ),
             ),

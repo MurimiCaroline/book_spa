@@ -1,7 +1,8 @@
-// import 'package:book_spa/screens/login.dart';
+//  import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
 import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/link.dart';
 
 
@@ -43,14 +44,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
                                     ElevatedButton(
-                      onPressed: () {
-
-
-                            Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const SignUpPage()),
-                          );
-
+                      onPressed: () {                       
+                          Get.to(() =>const SignUpPage());
                       },
                       child: const Text('Sign Up',
                       style: TextStyle(

@@ -1,4 +1,7 @@
+import 'package:book_spa/screens/signup.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -41,11 +44,22 @@ class _LogInState extends State<LogIn> {
                   ),
                   const SizedBox(height: 20),
                   const TextField(
-                    decoration: InputDecoration(labelText: 'Email'),
+                    decoration: InputDecoration(
+                      labelText: 'Email',
+                      prefixIcon: Icon(
+                        Icons.email,
+                        color: Colors.black,
+                      ),
+                      ),
                   ),
                   const SizedBox(height: 20),
                   const TextField(
-                    decoration: InputDecoration(labelText: 'Password'),
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                    prefixIcon:Icon(
+                      Icons.password,
+                      color: Colors.black,
+                    ) ),
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
@@ -58,6 +72,16 @@ class _LogInState extends State<LogIn> {
                     child: const Text('Log In'),
                     
                   ),
+                  RichText(text: 
+                    TextSpan(
+                      recognizer: TapGestureRecognizer()..onTap=() =>Get.to(const SignUpPage()), 
+                      text: "Don't have an account?",
+                      style: const TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                      ),
+                    ),
+                    ),
                 ],
               ),
             ),

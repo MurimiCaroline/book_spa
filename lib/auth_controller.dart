@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
+  late String email;
+  late String password;
  static  AuthController instance = Get.find();
   //Allows auth controller to be globally
   // //email, password to define user accessible in the app
-  // ignore: unused_field
+  
   late Rx<User?>  _user;
  FirebaseAuth auth = FirebaseAuth.instance;
 @override
@@ -29,9 +31,9 @@ _initialScreen(User? user){
   }
 }
 //funtion for registration
-void register(String name, phonenumber,String email, password){
+void register(String email, password) async{
  try{
-auth.createUserWithEmailAndPassword(email: email, password: password);
+await auth.createUserWithEmailAndPassword(email: email, password: password);
  }
 catch(e){
 Get.snackbar("About User", "User message",

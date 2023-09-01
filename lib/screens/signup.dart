@@ -1,3 +1,5 @@
+
+import 'package:book_spa/auth_controller.dart';
 import 'package:book_spa/screens/login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,9 @@ class SignUpPage extends StatefulWidget {
 class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
+    var emailController = TextEditingController();
+    var passwordController = TextEditingController();
+   
      double containerWidth = MediaQuery.of(context).size.width * 0.4;
     double containerHeight = MediaQuery.of(context).size.height * 0.8;
     return Scaffold(
@@ -39,9 +44,9 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                    ),
+                    ), 
                   ),
-                  const TextField(
+                 /* const TextField(
                     decoration: InputDecoration(
                       // hintText: 'Name',
                       labelText: ' Name',
@@ -49,14 +54,17 @@ class _SignUpPageState extends State<SignUpPage> {
                   ),
                   const TextField(
                     decoration: InputDecoration(labelText: 'Phone Number'),
+                  ), */
+                  const SizedBox(height: 20),
+                  TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(labelText: 'Email'),
                   ),
                   const SizedBox(height: 20),
-                  const TextField(
-                    decoration: InputDecoration(labelText: 'Email'),
-                  ),
-                  const SizedBox(height: 20),
-                  const TextField(
-                    decoration: InputDecoration(labelText: 'Password'),
+                  TextField(
+                    controller: passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(labelText: 'Password'),
                   ),
                   const SizedBox(height: 20),
                   Container(
@@ -66,7 +74,8 @@ class _SignUpPageState extends State<SignUpPage> {
                     child: 
                     ElevatedButton(
                           onPressed: () {
-                            // Handle form submission
+                            
+                           AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.orange,

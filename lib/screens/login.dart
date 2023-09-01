@@ -2,7 +2,6 @@ import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
 

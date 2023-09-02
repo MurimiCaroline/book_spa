@@ -1,4 +1,4 @@
-import 'package:book_spa/screens/homepage.dart';
+import 'package:book_spa/screens/homepage.dart' show HomeScreen;
 import 'package:book_spa/screens/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -24,10 +24,10 @@ void onReady(){
 _initialScreen(User? user){
   if(user==null){
     // ignore: avoid_print
-    print("login page");
-    Get.offAll(()=>const LogIn());
+    print("home page");
+    Get.offAll(()=>const HomeScreen());
   }else{
-    Get.offAll(()=> const HomeScreen()); 
+    Get.offAll(()=> const LogIn()); 
   }
 }
 //funtion for registration

@@ -7,77 +7,78 @@ import 'package:get/get.dart';
 class AuthController extends GetxController {
   late String email;
   late String password;
- static  AuthController instance = Get.find();
+  final Rx<User?> _user = Rx<User?>(null);
+  static AuthController instance = Get.find();
   //Allows auth controller to be globally
   // //email, password to define user accessible in the app
-  
-  late Rx<User?>  _user;
- FirebaseAuth auth = FirebaseAuth.instance;
-@override
-void onReady(){
- super.onReady();
- _user = auth.currentUser as Rx<User?>;
- //our user will be notified
- _user.bindStream(auth.userChanges());
-  ever(_user, _initialScreen);
-} 
-_initialScreen(User? user){
-  if(user==null){
-    // ignore: avoid_print
-    print("login page");
-    Get.offAll(()=>const LogIn());
-  }else{
-    Get.offAll(()=> const HomeScreen()); 
+
+  // late Rx<User?> _user;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  @override
+   void onReady() {
+    super.onReady();
+    // Bind the Stream<User?> to the Rx<User?> variable.
+    _user.bindStream(auth.userChanges());
+    ever(_user, _initialScreen);
+  }
+
+  _initialScreen(User? user) {
+    if (user == null) {
+      // User is not logged in, navigate to the login screen.
+      Get.offAll(() => const LogIn());
+    } else {
+      // User is logged in, navigate to the home screen.
+      Get.offAll(() => const HomeScreen());
+    }
+  }
+
+//funtion for registration
+  void register(String email, password) async {
+    try {
+      await auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+    } catch (e) {
+      Get.snackbar("About User", "User message",
+          backgroundColor: Colors.redAccent,
+          snackPosition: SnackPosition.BOTTOM,
+          titleText: const Text(
+            "Account creation failed",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          messageText: Text(
+            e.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ));
+    }
+  }
+
+  void login(String email, password) async {
+    try {
+      await auth.signInWithEmailAndPassword(email: email, password: password);
+    } catch (e) {
+      Get.snackbar("About Login", "Login message",
+          backgroundColor: Colors.redAccent,
+          snackPosition: SnackPosition.BOTTOM,
+          titleText: const Text(
+            "Login failed",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          messageText: Text(
+            e.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ));
+    }
+  }
+
+  void logOut() async {
+    await auth.signOut();
   }
 }
-//funtion for registration
-void register(String email, password) async{
- try{
-await auth.createUserWithEmailAndPassword(email: email, password: password);
- }
-catch(e){
-Get.snackbar("About User", "User message",
-backgroundColor: Colors.redAccent,
-snackPosition: SnackPosition.BOTTOM,
-titleText: const Text(
-  "Account creation failed",
-  style: TextStyle(
-    color: Colors.white,
-  ),
-),
-messageText: Text(
-  e.toString(),
-  style: const TextStyle(
-    color: Colors.white,
-  ),
-)
-);
-}
-}
-void login(String email, password) async{
- try{
-await auth.signInWithEmailAndPassword(email: email, password: password);
- }
-catch(e){
-Get.snackbar("About Login", "Login message",
-backgroundColor: Colors.redAccent,
-snackPosition: SnackPosition.BOTTOM,
-titleText: const Text(
-  "Login failed",
-  style: TextStyle(
-    color: Colors.white,
-  ),
-),
-messageText: Text(
-  e.toString(),
-  style: const TextStyle(
-    color: Colors.white,
-  ),
-)
-);
-}
-}
-void logOut() async{
- await auth.signOut();
-}
-} 

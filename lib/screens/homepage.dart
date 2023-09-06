@@ -1,10 +1,10 @@
 //  import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/auth_controller.dart';
-import 'package:book_spa/screens/login.dart';
+// import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
-import 'package:book_spa/screens/signup.dart';
+// import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+// import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    ElevatedButton(
+                   /* ElevatedButton(
                       onPressed: () {
                         Get.to(() => const SignUpPage());
                       },
@@ -48,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    ElevatedButton(
+                     ElevatedButton(
                       onPressed: () {
                         Get.to(() => const LogIn());
                       },
@@ -59,6 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
+   */
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {
@@ -71,8 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-              
-                                    ],
+                  ],
                 ),
               ),
               const SizedBox(height: 10),

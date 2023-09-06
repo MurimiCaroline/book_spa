@@ -11,6 +11,8 @@ class LogIn extends StatefulWidget {
 }
 
 class _LogInState extends State<LogIn> {
+  var emailController = TextEditingController();
+    var passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     double containerWidth = MediaQuery.of(context).size.width * 0.4;
@@ -43,8 +45,9 @@ class _LogInState extends State<LogIn> {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  const TextField(
-                    decoration: InputDecoration(
+                  TextField(
+                    controller: emailController,
+                    decoration: const InputDecoration(
                       labelText: 'Email',
                       prefixIcon: Icon(
                         Icons.email,
@@ -53,8 +56,11 @@ class _LogInState extends State<LogIn> {
                       ),
                   ),
                   const SizedBox(height: 20),
-                  const TextField(
-                    decoration: InputDecoration(
+                   TextField(
+                    controller: passwordController,
+                    obscureText: true,
+
+                    decoration: const InputDecoration(
                       labelText: 'Password',
                     prefixIcon:Icon(
                       Icons.password,
@@ -64,8 +70,7 @@ class _LogInState extends State<LogIn> {
                   const SizedBox(height: 20),
                   ElevatedButton(
                     onPressed: () async{
-                      AuthController.instance.onReady();
-                      // Handle form submission
+                      AuthController.instance.login(emailController.text.trim(), passwordController.text.trim());
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange,

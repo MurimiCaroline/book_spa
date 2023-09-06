@@ -1,3 +1,4 @@
+import 'package:book_spa/auth_controller.dart';
 import 'package:book_spa/screens/signup.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,8 @@ class _LogInState extends State<LogIn> {
                   ),
                   const SizedBox(height: 20),
                   ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async{
+                      AuthController.instance.onReady();
                       // Handle form submission
                     },
                     style: ElevatedButton.styleFrom(

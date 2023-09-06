@@ -24,10 +24,10 @@ void onReady(){
 _initialScreen(User? user){
   if(user==null){
     // ignore: avoid_print
-    print("home page");
-    Get.offAll(()=>const HomeScreen());
+    print("login page");
+    Get.offAll(()=>const LogIn());
   }else{
-    Get.offAll(()=> const LogIn()); 
+    Get.offAll(()=> const HomeScreen()); 
   }
 }
 //funtion for registration
@@ -53,5 +53,31 @@ messageText: Text(
 )
 );
 }
+}
+void login(String email, password) async{
+ try{
+await auth.signInWithEmailAndPassword(email: email, password: password);
+ }
+catch(e){
+Get.snackbar("About Login", "Login message",
+backgroundColor: Colors.redAccent,
+snackPosition: SnackPosition.BOTTOM,
+titleText: const Text(
+  "Login failed",
+  style: TextStyle(
+    color: Colors.white,
+  ),
+),
+messageText: Text(
+  e.toString(),
+  style: const TextStyle(
+    color: Colors.white,
+  ),
+)
+);
+}
+}
+void logOut() async{
+ await auth.signOut();
 }
 } 

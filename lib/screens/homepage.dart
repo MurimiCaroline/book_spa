@@ -1,5 +1,6 @@
 //  import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/auth_controller.dart';
+import 'package:book_spa/features.dart';
 // import 'package:book_spa/screens/login.dart';
 import 'package:book_spa/screens/luxury.dart';
 // import 'package:book_spa/screens/signup.dart';
@@ -61,17 +62,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
    */
                     const Spacer(),
-                    ElevatedButton(
-                      onPressed: () {
-                        AuthController.instance.logOut();
-                      },
-                      child: const Text(
-                        'Sign Out',
-                        style: TextStyle(
-                          fontSize: 20,
-                        ),
-                      ),
-                    ),
+                    CustomButton(
+                here: 'Sign Out',
+                onPressed: () {
+                  AuthController.instance.logOut();
+                },
+              ),
+                    
                   ],
                 ),
               ),
@@ -160,9 +157,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 20,
               ),
               const Text(
-                  "spice up your look is a foundation founded in 2019 to "),
-              const Text(
-                  "make easy getting and booking cosmetic services at the comfort of your home"),
+                  """spice up your look is a foundation founded in 2019 to make
+easy getting and booking cosmetic services at the comfort of your home"""),
             ],
           ),
         )
